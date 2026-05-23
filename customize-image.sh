@@ -62,6 +62,11 @@ Main() {
 	InstallAptPkg "cargo"
 	InstallAptPkg "libffi-dev"
 	InstallAptPkg "libssl-dev"
+	
+	#GPS 
+	InstallAptPkg "gpsd"
+	InstallAptPkg "chrony"
+	
 
 	# Misc
 	case $pipx_g in
@@ -129,7 +134,7 @@ GitClone() {
 	REPO_URL="$1"
 	DEST_DIR="$2"
 	echo "GIT: Cloning ${REPO_URL}..."
-	git clone  --depth=1 "$REPO_URL" "$DEST_DIR"
+	git clone --depth=1 "$REPO_URL" "$DEST_DIR"
 } # GitClone
 
 CompileDTBO() {
