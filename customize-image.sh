@@ -47,8 +47,6 @@ Main() {
 	# meshtasticd can't currently be installed via the `meshtasticd` Extension
 	# due to a race condition with the gpio group when installing before family-tweaks.
 	InstallAptPkg "meshtasticd"
-	# Same story with i2c-tools. Race condition with i2c group in family-tweaks.
-	InstallAptPkg "i2c-tools"
 
 	# Spud Added packages for dev-kit in runtime
 	InstallAptPkg "python3-pip"
@@ -201,7 +199,7 @@ BoardSpecific() {
 	case $BOARD in
 		ebyte-ecb41-pge)
 			# Enable ebyte-ecb41-pge-spi0-1cs-spidev overlay
-			EnableUserDTOverlay "ebyte-ecb41-pge-spi0-1cs-spidev"
+			EnableKernelDTOverlay "ebyte-ecb41-pge-spi0-1cs-spidev"
 			# Set meshtasticd MacAddressSource to 'end0' for ebyte-ecb41-pge
 			MTSetMacSrc "end0"
 			;;
@@ -236,15 +234,15 @@ BoardSpecific() {
 			EnableKernelDTOverlay "luckfox-lyra-zero-w-spi0-1cs-spidev"
 			;;
 		luckfox-pico-max)
-			# Set meshtasticd MacAddressSource to 'eth0' for pico-max
-			MTSetMacSrc "eth0"
+			# Set meshtasticd MacAddressSource to 'end0' for pico-max
+			MTSetMacSrc "end0"
 			# Download waveshare pico config for pico-max (from develop branch)
 			curl -fsSL https://github.com/meshtastic/firmware/raw/466cc4cecddd11cd1bb0d0b166bd658d116832b3/bin/config.d/lora-luckfox-pico-max-ws-raspberry-pi-pico-hat.yaml \
 				-o /etc/meshtasticd/config.d/lora-luckfox-pico-max-ws-raspberry-pi-pico-hat.yaml
 			;;
 		luckfox-pico-mini)
-			# Set meshtasticd MacAddressSource to 'eth0' for pico-mini
-			MTSetMacSrc "eth0"
+			# Set meshtasticd MacAddressSource to 'end0' for pico-mini
+			MTSetMacSrc "end0"
 			# Download femtofox config for pico-mini (directory changed upstream)
 			curl -fsSL https://raw.githubusercontent.com/meshtastic/firmware/refs/tags/v2.7.22.96dd647/bin/config.d/lora-femtofox_SX1262_TCXO.yaml \
 				-o /etc/meshtasticd/config.d/lora-femtofox_SX1262_TCXO.yaml

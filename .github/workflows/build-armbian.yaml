@@ -18,33 +18,33 @@ jobs:
       matrix:
         include:
           - config: ebyte-ecb41-pge
-            armbian_ref: v26.2.0-trunk.890 # Dev
+            armbian_ref: v26.5.1 # Stable Tag
           - config: forlinx-ok3506-s12
-            armbian_ref: v26.2.0-trunk.890 # Dev
+            armbian_ref: v26.5.1 # Stable Tag
           - config: luckfox-lyra-plus
-            armbian_ref: v26.2.0-trunk.890 # Dev
+            armbian_ref: v26.5.1 # Stable Tag
           - config: luckfox-lyra-ultra-w
-            armbian_ref: v26.2.0-trunk.890 # Dev
+            armbian_ref: v26.5.1 # Stable Tag
           - config: luckfox-lyra-zero-w
-            armbian_ref: v26.2.0-trunk.890 # Dev
+            armbian_ref: v26.5.1 # Stable Tag
           - config: luckfox-pico-max
-            armbian_ref: 761d04edac790c552380061d5c2ff0b780ff18d4 # Dev
+            armbian_ref: v26.5.1 # Stable Tag
           - config: luckfox-pico-mini
-            armbian_ref: 761d04edac790c552380061d5c2ff0b780ff18d4 # Dev
+            armbian_ref: v26.5.1 # Stable Tag
           - config: raspberry-pi-64bit
-            armbian_ref: v26.2.1 # Stable
+            armbian_ref: v26.5.1 # Stable Tag
           - config: uefi-x86_64
-            armbian_ref: v26.2.0-trunk.890 # Dev
+            armbian_ref: v26.5.1 # Stable Tag
       fail-fast: false
     steps:
       - name: Checkout armbian/build into workspace root
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: armbian/build
           ref: ${{ matrix.armbian_ref }}
 
       - name: Checkout current repository into userpatches
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           path: userpatches
 
