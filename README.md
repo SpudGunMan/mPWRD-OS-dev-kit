@@ -74,7 +74,7 @@ cd build
 
 2. Checkout this repo as "userpatches"
 ```sh
-git clone https://github.com/spudgunman/mPWRD-OS userpatches
+git clone https://github.com/SpudGunMan/mPWRD-OS-dev-kit userpatches
 ```
 
 3. Compile!
