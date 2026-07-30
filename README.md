@@ -62,7 +62,7 @@ See Also: [mPWRD-OS Provisioning](https://github.com/mPWRD-OS/mPWRD-OS/wiki/Prov
 2. SSH into the device (or connect with Serial), login with default credentials. You will be prompted to change this upon first login.
 3. Run `mpwrd-menu` to setup Meshtastic, change settings, and more!
 
-## Using this repo
+## 🥔 Using this repo 🥔
 
 To get a image to flash to SDcard for the femtofox follow these directions. I use a Ubuntu 24.04 Virtual Image to follow the steps below.
 
@@ -83,16 +83,16 @@ git clone https://github.com/SpudGunMan/mPWRD-OS-dev-kit userpatches
 ```
 This example will build the configuration at `config-luckfox-pico-mini.conf`
 
-To build other boards with a wider selection, run
+🥔🥔🥔 To build other boards with a wider selection, run 🥔🥔🥔
 ```sh
 ./userpatches/run-build.sh build
 ```
 
 The output image will go into .. `build/output/images`
 
-Once booted and system is setup radio is lit up and working..
+🥔🥔 Once booted and system is setup radio is lit up and working..
 - Edit the /opt/meshing-around/config.ini as needed 
 - To install sercvice run from the /opt/meshing-around directory
   - `sudo bash etc/install_service.sh`
 
-Your mPWRD-OS device should now be running meshing-around bot!
+Your mPWRD-OS device should now be running meshing-around bot! 🥔🥔🥔
