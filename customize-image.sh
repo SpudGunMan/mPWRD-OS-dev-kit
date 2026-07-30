@@ -46,13 +46,17 @@ Main() {
 	apt-get update
 	# meshtasticd can't currently be installed via the `meshtasticd` Extension
 	# due to a race condition with the gpio group when installing before family-tweaks.
+
+	#Spud out here installing it anyway.
 	InstallAptPkg "meshtasticd"
 
 	# Spud Added packages for dev-kit in runtime
+	InstallAptPkg "git"
+	InstallAptPkg "python3"
+	InstallAptPkg "python3-venv"
 	InstallAptPkg "python3-pip"
 	InstallAptPkg "python3-dev"
 	InstallAptPkg "python3-setuptools"
-	InstallAptPkg "python3-venv"
 	InstallAptPkg "python-is-python3"
 	InstallAptPkg "build-essential"
 	InstallAptPkg "pkg-config"
